@@ -25,6 +25,19 @@ using namespace std;
 int sum(int n);
 
 
+
+/**
+ * Calculates the product of numbers from 1 to n.
+ *
+ * @param int n Number the user enters.
+ * @pre Number the user enters.
+ * @return int Returns the product of numbers from 1 to n.
+ * @post Returns the product of numbers from 1 to n.
+ * 
+ */
+int product(int n);
+
+
 int main() {
   cout << "Hello World!" << endl;
 
@@ -34,8 +47,10 @@ int main() {
 
   // Call the sum function and print the result
   if (n > 0) {
-    int result = sum(n);
-    cout << "The sum of numbers from 1 to " << n << " is: " << result << endl;
+    int sumResult = sum(n);
+    int productResult = product(n);
+    cout << "The sum of numbers from 1 to " << n << " is: " << sumResult << endl;
+    cout << "The product of numbers from 1 to " << n << " is: " << productResult << endl;
   } else {
     cout << "Please enter a positive number." << endl;
   }
@@ -47,6 +62,14 @@ int sum(int n) {
   int total = 0;
   for (int i = 1; i <= n; ++i) {
     total += i;
+  }
+  return total;
+}
+
+int product(int n) {
+  int total = 1;
+  for (int i = 1; i <= n; ++i) {
+    total *= i;
   }
   return total;
 }
